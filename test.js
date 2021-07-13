@@ -123,13 +123,6 @@ class Topologies {
 
 
 let top1 = new toplogy("topology.json");
-
-console.log(data)
-console.log("Retreival")
-console.log(top1.retrieve())
-console.log("-----------------------------------------------")
-console.log("Write then read")
-
 let new_topology_json = {
   "id": "top15",
   "components": [
@@ -162,6 +155,13 @@ let new_topology_json = {
     }
   ]
 };
+console.log(data)
+console.log("Retreival")
+console.log(top1.retrieve())
+console.log("-----------------------------------------------")
+console.log("Write then read")
+
+
 let top15 = new toplogy("top15.json");
 console.log(top15.write(JSON.stringify(new_topology_json)))
 console.log("-----------------------------------------------")
@@ -169,10 +169,9 @@ console.log(top1.query_devices())
 console.log("-----------------------------------------------")
 console.log(top1.query_netlist())
 
-// let topologies = new Topologies()
-// topologies.add_topology(top1)
-// topologies.add_topology(top15)
-// topologies.queryTopologies()
+let topologies = new Topologies()
+topologies.add_topology(top1)
+topologies.add_topology(top15)
+topologies.queryTopologies()
 
-// console.log(x)
 
