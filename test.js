@@ -103,7 +103,7 @@ class Topologies {
     let index = 0;
     for (index = 0; index < this.toplogies.length; index++) {
       const top = this.toplogies[index];
-      data = top.retrieve()
+      let data = top.retrieve()
       if (data.id == id) {
         break;
       }
@@ -155,7 +155,7 @@ let new_topology_json = {
     }
   ]
 };
-console.log(data)
+
 console.log("Retreival")
 console.log(top1.retrieve())
 console.log("-----------------------------------------------")
@@ -172,6 +172,9 @@ console.log(top1.query_netlist())
 let topologies = new Topologies()
 topologies.add_topology(top1)
 topologies.add_topology(top15)
+topologies.queryTopologies()
+console.log('Now removing top15 topology, then we query again')
+topologies.removeTopology('top15')
 topologies.queryTopologies()
 
 
